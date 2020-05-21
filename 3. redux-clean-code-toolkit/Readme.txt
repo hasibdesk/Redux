@@ -35,3 +35,21 @@ export default createReducer([], {
 	},
 
 });
+
+=== createSlice
+
+its combine all the actions and reducer 
+const slice = createSlice({
+	name: 'bugs',
+	initialState: [],
+	reducers: {
+		//only actions => action handler
+		actiontype: (state, action) => {
+			state.push({ id: ++lastId, description: action.payload.description, resolved: false });
+		},
+	
+	},
+});
+
+export const { bugAdded, bugResolved, bugRemoved } = slice.actions;
+export default slice.reducer;
