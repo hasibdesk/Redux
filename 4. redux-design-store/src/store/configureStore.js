@@ -1,11 +1,7 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import reducer from './bugs';
-import projects from './projects';
+import reducer from './reducer';
 
 export default function () {
-	const store = configureStore({
-		reducer: projects,
-	});
-	return store;
+	return configureStore({ reducer });
 }
